@@ -3,9 +3,10 @@ import { TypeOrmModule } from '@nestjs/typeorm'
 import * as dotenv from 'dotenv'
 import { CommandModule } from 'nestjs-command'
 
-import { DatabaseNamingStrategy } from 'src/db/database-naming.strategy'
+import { MainModule } from './modules/main/main.module'
+import { NewsModule } from './modules/news/news.module'
 
-import { MainModule } from 'src/modules/main/main.module'
+import { DatabaseNamingStrategy } from 'src/db/database-naming.strategy'
 
 dotenv.config()
 
@@ -24,6 +25,7 @@ dotenv.config()
     }),
     CommandModule,
     MainModule,
+    NewsModule,
   ],
   controllers: [],
   providers: [],
