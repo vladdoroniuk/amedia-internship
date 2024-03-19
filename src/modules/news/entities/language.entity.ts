@@ -1,6 +1,4 @@
-import { Column, Entity, JoinTable, ManyToMany, PrimaryGeneratedColumn } from 'typeorm'
-
-import { NewsEntity } from './news.entity'
+import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm'
 
 @Entity('language')
 export class LanguageEntity {
@@ -9,8 +7,4 @@ export class LanguageEntity {
 
   @Column({ type: 'text' })
   name: string
-
-  @ManyToMany(() => NewsEntity)
-  @JoinTable()
-  news: NewsEntity[]
 }
